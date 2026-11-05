@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-container": "#00f0ff", "tertiary": "#d8ffe7", "on-primary": "#00363a", "secondary": "#43edcd", "inverse-surface": "#dfe2ee", "secondary-container": "#00d0b2", "background": "#0f131c", "on-error": "#690005", "on-tertiary-container": "#006d4a", "surface-tint": "#00dbe9", "on-tertiary-fixed": "#002113", "on-error-container": "#ffdad6", "on-primary-fixed": "#002022", "error": "#ffb4ab", "on-tertiary-fixed-variant": "#005236", "secondary-fixed-dim": "#2adec0", "on-secondary-container": "#005346", "surface-dim": "#0f131c", "secondary-fixed": "#57fbdb", "on-background": "#dfe2ee", "surface-variant": "#31353e", "on-surface-variant": "#b9cacb", "surface-container-highest": "#31353e", "on-primary-container": "#006970", "surface-container-lowest": "#0a0e16", "primary-fixed": "#7df4ff", "surface-container-high": "#262a33", "surface": "#0f131c", "inverse-primary": "#006970", "tertiary-fixed": "#6ffbbe", "surface-bright": "#353942", "on-primary-fixed-variant": "#004f54", "on-secondary": "#00382e", "error-container": "#93000a", "on-secondary-fixed": "#00201a", "on-tertiary": "#003824", "inverse-on-surface": "#2c3039", "outline-variant": "#3b494b", "outline": "#849495", "on-secondary-fixed-variant": "#005144", "on-surface": "#dfe2ee", "tertiary-fixed-dim": "#4edea3", "tertiary-container": "#65f2b5", "primary": "#dbfcff", "primary-fixed-dim": "#00dbe9", "surface-container": "#1c2028", "surface-container-low": "#181c24" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-md": "1.5rem", "margin-md": "2rem", "margin-lg": "3rem", "gutter-lg": "2rem", "margin": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-md": "1rem", "space-xl": "2.5rem", "gutter": "1rem" }, fontFamily: { "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "metric-huge": ["Plus Jakarta Sans"], "metric-huge-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.08em", fontWeight: "700" }], "metric-huge": ["64px", { lineHeight: "64px", letterSpacing: "-0.04em", fontWeight: "800" }], "metric-huge-mobile": ["44px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "800" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "display-hero-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.025em", fontWeight: "800" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "display-hero": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "800" }], "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,0,0,0.4)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-full bg-gradient-to-tr from-primary-container to-secondary flex items-center justify-center shadow-[0_0_12px_rgba(0,240,255,0.35)] shrink-0"><span class="material-symbols-outlined text-surface text-xl select-none font-bold">bolt</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary truncate">AURA FIT</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Rutinas</span></div></div><div class="flex items-center gap-space-sm shrink-0"><div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high/90 text-tertiary-fixed border border-secondary/20 shadow-[0_0_10px_rgba(67,237,205,0.15)]"><span class="text-xs select-none">🔥</span><span class="font-label-sm text-label-sm tracking-normal">5 Días</span></div><button aria-label="Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-2xl">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary-container/40" src="https://lh3.googleusercontent.com/aida/AEtjO1UICPfB7UPfK4JuGaVsUGTT1aUrVqEIdhfwqEW4WYUnXdUyafMSGxf7UoxB08cWD26-z7wtc9T0DD0Ke9zRDfmD7Cg81_191gIgOOy6QJYdAMqtnUHEGaFfu-jSe0c4MxM3lzyI1ZQQ38cfBPQtXleV313p2y_q21HhN7uc3clGMmgo09h_eTD4ATUUrljk_FHJ9ILSMYV0lupbrD4jMWPs8OlD3-jKDaJwY6frmUPVuocg70PbZ6yDeJwX"/></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-24 min-h-screen flex flex-col relative"><div class="flex flex-col w-full pb-8 select-none">
+<!-- Toast Feedback System -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none transition-all duration-300 opacity-0 -translate-y-2 flex items-center gap-space-sm px-4 py-2.5 rounded-full bg-surface-container-highest/95 backdrop-blur-md shadow-[0_4px_24px_rgba(0,240,255,0.3)]" id="aura-toast">
+<span class="material-symbols-outlined text-primary-container text-lg" id="aura-toast-icon">check_circle</span>
+<span class="font-label-md text-label-md text-primary font-semibold" id="aura-toast-msg">Acción completada</span>
+</div>
+<!-- TAB 1: RUTINAS -->
+<section class="tab-panel flex flex-col w-full space-y-5 px-margin" id="tab-rutinas">
+<!-- Telemetry Bar -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">420 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">kcal</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hoy quemadas</span>
+</div>
+</div>
+<div class="w-px h-7 bg-surface-variant"></div>
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">timer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary tracking-tight font-bold">32 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">min</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Activos</span>
+</div>
+</div>
+<div class="w-px h-7 bg-surface-variant"></div>
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-lg">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-tertiary-fixed tracking-tight font-bold">5 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">días</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Racha</span>
+</div>
+</div>
+</div>
+<!-- Hero Card: Rutina Destacada -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high shadow-xl p-5">
+<div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="absolute right-0 bottom-0 w-36 h-36 rounded-full bg-secondary/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-3.5">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-label-sm flex items-center gap-1.5 uppercase font-bold tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+            Recomendada Hoy
+          </span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="font-label-sm text-label-sm">20 min</span>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-extrabold">HIIT Full Body Ignición</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Activación metabólica acelerada. Quema calórica sostenida durante 24 horas sin equipamiento externo.
+          </p>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container text-tertiary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-base">local_fire_department</span>
+<span>350 kcal</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-base">exercise</span>
+<span>Sin equipo</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-base">speed</span>
+<span>Intenso</span>
+</div>
+</div>
+<button class="w-full mt-2 py-3.5 px-5 rounded-full bg-gradient-to-r from-primary-container via-secondary-container to-secondary text-surface font-label-lg text-label-lg font-bold shadow-[0_0_24px_rgba(0,240,255,0.35)] active:scale-[0.98] transition-all flex items-center justify-center gap-2" onclick="iniciarRutinaDirecta('HIIT Full Body Ignición', 20, 350)">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+<span>Iniciar Rutina Ahora</span>
+</button>
+</div>
+</div>
+<!-- Filter Pills -->
+<div class="flex flex-col space-y-2.5">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Entrenamientos</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 Disponibles</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-sm transition-all" onclick="filtrarRutinas('todos', this)">Todos</button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold transition-all" onclick="filtrarRutinas('quema-rapida', this)">Quema Rápida (15m)</button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold transition-all" onclick="filtrarRutinas('abdomen', this)">Abdomen de Acero</button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold transition-all" onclick="filtrarRutinas('tabata', this)">Tabata Intenso</button>
+</div>
+</div>
+<!-- Routine Items List -->
+<div class="flex flex-col space-y-3" id="rutinas-lista">
+<!-- Card 1 -->
+<div class="routine-card p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between gap-3 shadow-sm" data-category="quema-rapida">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-2xl">cardiology</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-primary font-bold truncate">Cardio Quema Grasa</h4>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">timer</span> 15 min</span>
+<span>•</span>
+<span class="flex items-center gap-0.5 text-secondary"><span class="material-symbols-outlined text-xs">local_fire_department</span> 180 kcal</span>
+</div>
+</div>
+</div>
+<button aria-label="Reproducir Cardio Quema Grasa" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-container text-primary-container flex items-center justify-center shrink-0 transition-colors shadow-sm active:scale-95" onclick="iniciarRutinaDirecta('Cardio Quema Grasa', 15, 180)">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="routine-card p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between gap-3 shadow-sm" data-category="tabata">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl">electric_bolt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-primary font-bold truncate">Tabata Explosivo</h4>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">timer</span> 18 min</span>
+<span>•</span>
+<span class="flex items-center gap-0.5 text-secondary"><span class="material-symbols-outlined text-xs">local_fire_department</span> 260 kcal</span>
+</div>
+</div>
+</div>
+<button aria-label="Reproducir Tabata Explosivo" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-container text-primary-container flex items-center justify-center shrink-0 transition-colors shadow-sm active:scale-95" onclick="iniciarRutinaDirecta('Tabata Explosivo', 18, 260)">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</button>
+</div>
+<!-- Card 3 -->
+<div class="routine-card p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between gap-3 shadow-sm" data-category="abdomen">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-2xl">shield</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-primary font-bold truncate">Core &amp; Abdominales</h4>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">timer</span> 12 min</span>
+<span>•</span>
+<span class="flex items-center gap-0.5 text-secondary"><span class="material-symbols-outlined text-xs">local_fire_department</span> 140 kcal</span>
+</div>
+</div>
+</div>
+<button aria-label="Reproducir Core &amp; Abdominales" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-container text-primary-container flex items-center justify-center shrink-0 transition-colors shadow-sm active:scale-95" onclick="iniciarRutinaDirecta('Core &amp; Abdominales', 12, 140)">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</button>
+</div>
+<!-- Card 4 -->
+<div class="routine-card p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between gap-3 shadow-sm" data-category="quema-rapida">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-2xl">whatshot</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label-lg text-label-lg text-primary font-bold truncate">Full Body Quema Máxima</h4>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">timer</span> 25 min</span>
+<span>•</span>
+<span class="flex items-center gap-0.5 text-secondary"><span class="material-symbols-outlined text-xs">local_fire_department</span> 380 kcal</span>
+</div>
+</div>
+</div>
+<button aria-label="Reproducir Full Body Quema Máxima" class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-primary-container hover:text-on-primary-container text-primary-container flex items-center justify-center shrink-0 transition-colors shadow-sm active:scale-95" onclick="iniciarRutinaDirecta('Full Body Quema Máxima', 25, 380)">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- EPOC Metabolic Tip Card with Glow -->
+<div class="relative overflow-hidden p-4 rounded-xl bg-surface-container shadow-[0_0_20px_rgba(0,240,255,0.12)]">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-lg">science</span>
+</div>
+<div class="flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-primary-container uppercase font-bold tracking-wider">Efecto Térmico EPOC</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Al mantener intervalos al 85% de FC máxima, tu metabolismo consumirá hasta un 15% más de calorías en reposo durante las siguientes 14 horas.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB 2: ENTRENADOR EN VIVO -->
+<section class="tab-panel hidden flex flex-col w-full space-y-4 px-margin" id="tab-entrenador">
+<!-- Live Header & HUD Progression -->
+<div class="flex flex-col space-y-2 p-3.5 rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">EN DIRECTO • HIIT METABÓLICO</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Ronda 2 de 4</span>
+</div>
+<!-- Segment Progress Indicator -->
+<div class="flex flex-col space-y-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Bloque de Alta Intensidad</span>
+<span class="text-primary font-bold" id="hud-step">Paso 4/12</span>
+</div>
+<div class="grid grid-cols-12 gap-1 h-1.5 w-full">
+<div class="h-full rounded-full bg-primary-container"></div>
+<div class="h-full rounded-full bg-primary-container"></div>
+<div class="h-full rounded-full bg-primary-container"></div>
+<div class="h-full rounded-full bg-secondary animate-pulse"></div>
+<div class="h-full rounded-full bg-surface-variant"></div>
+<div class="h-full rounded-full bg-surface-variant"></div>
+<div class="h-full rounded-full bg-surface-variant"></div>
+<div class="h-full rounded-full bg-surface-variant"></div>
+<div class="h-full rounded-full bg-surface-variant"></div>
+<div class="h-full rounded-full bg-surface-variant"></div>
+<div class="h-full rounded-full bg-surface-variant"></div>
+<div class="h-full rounded-full bg-surface-variant"></div>
+</div>
+</div>
+</div>
+<!-- Circular HUD Timer Widget -->
+<div class="flex flex-col items-center justify-center py-2 relative">
+<div class="relative w-56 h-56 flex items-center justify-center">
+<!-- SVG Radial Gauge -->
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 100 100">
+<circle class="text-surface-variant" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-width="5"></circle>
+<circle class="text-primary-container transition-all duration-1000" cx="50" cy="50" fill="transparent" id="timer-ring" r="42" stroke="currentColor" stroke-dasharray="264" stroke-dashoffset="66" stroke-linecap="round" stroke-width="5.5"></circle>
+</svg>
+<!-- Center Counter Display -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Tiempo Restante</span>
+<span class="font-metric-huge-mobile text-metric-huge-mobile text-primary font-black tracking-tight my-0.5" id="timer-display">00:42</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm font-bold uppercase" id="timer-status-badge">En Exerción</span>
+</div>
+</div>
+<!-- Quick Playback HUD Controls -->
+<div class="flex items-center gap-4 mt-3">
+<button aria-label="Silenciar o Activar Audio" class="w-11 h-11 rounded-full bg-surface-container-high hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors shadow-sm" id="btn-audio" onclick="toggleAudio()">
+<span class="material-symbols-outlined text-xl" id="audio-icon">volume_up</span>
+</button>
+<button aria-label="Pausar o Reanudar Temporizador" class="w-16 h-16 rounded-full bg-gradient-to-tr from-primary-container to-secondary text-surface flex items-center justify-center shadow-[0_0_24px_rgba(0,240,255,0.45)] active:scale-95 transition-transform" id="btn-timer-toggle" onclick="toggleTimer()">
+<span class="material-symbols-outlined text-3xl font-bold" id="timer-play-icon">pause</span>
+</button>
+<button aria-label="Saltar al Siguiente Ejercicio" class="w-11 h-11 rounded-full bg-surface-container-high hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors shadow-sm" onclick="saltarEjercicio()">
+<span class="material-symbols-outlined text-xl">skip_next</span>
+</button>
+</div>
+</div>
+<!-- Active Exercise Card -->
+<div class="p-4 rounded-xl bg-surface-container flex flex-col space-y-3 shadow-md">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Ejercicio Actual</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold" id="current-exercise-title">Jumping Jacks Explosivos</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">45 seg de trabajo dinámico</span>
+</div>
+<div class="w-14 h-14 rounded-xl overflow-hidden bg-surface-container-highest shrink-0 shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary-container">sports_gymnastics</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg shrink-0">tips_and_updates</span>
+<p class="font-body-sm text-body-sm text-on-surface">Aterriza sobre la bola del pie con rodillas elásticas para amortiguar impacto articular.</p>
+</div>
+</div>
+<!-- Live Biometrics Grid -->
+<div class="grid grid-cols-3 gap-2.5">
+<div class="p-3 rounded-xl bg-surface-container flex flex-col items-center justify-center text-center shadow-sm">
+<div class="flex items-center gap-1 text-error mb-1">
+<span class="material-symbols-outlined text-base animate-pulse">favorite</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">BPM</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold leading-none" id="bio-bpm">148</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">Zona Quema</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container flex flex-col items-center justify-center text-center shadow-sm">
+<div class="flex items-center gap-1 text-primary-container mb-1">
+<span class="material-symbols-outlined text-base">local_fire_department</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Gasto</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold leading-none" id="bio-kcal">145</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">kcal activas</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container flex flex-col items-center justify-center text-center shadow-sm">
+<div class="flex items-center gap-1 text-secondary mb-1">
+<span class="material-symbols-outlined text-base">repeat</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Series</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold leading-none" id="bio-round">4/12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Fase activa</span>
+</div>
+</div>
+<!-- AURA Voice Coach Cue -->
+<div class="p-3.5 rounded-xl bg-surface-container flex items-center gap-3 shadow-sm">
+<div class="w-9 h-9 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-xl">record_voice_over</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary-container font-bold uppercase">AURA Coach Audio-Cue</span>
+<p class="font-body-sm text-body-sm text-on-surface truncate">"¡Mantén la respiración rítmica y aprieta el core al aterrizar!"</p>
+</div>
+</div>
+<!-- Next Exercise Preview -->
+<div class="p-3.5 rounded-xl bg-surface-container flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">skip_next</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">A continuación</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Sentadillas con Salto</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Descanso 15s</span>
+</div>
+<!-- Finish Action Button -->
+<button class="w-full py-3.5 rounded-xl bg-surface-container-high hover:bg-surface-variant text-error font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-[0.99]" onclick="terminarEntrenamiento()">
+<span class="material-symbols-outlined text-xl">stop_circle</span>
+<span>Terminar Entrenamiento</span>
+</button>
+</section>
+<!-- TAB 3: PROGRESO & QUEMA -->
+<section class="tab-panel hidden flex flex-col w-full space-y-4 px-margin" id="tab-progreso">
+<!-- Weekly Performance Banner -->
+<div class="p-4 rounded-xl bg-surface-container-high shadow-xl relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-secondary/10 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Rendimiento Semanal</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary-fixed bg-tertiary-container/20 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-xs">trending_up</span> +14% meta
+          </span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-black tracking-tight">2,840</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase font-semibold">kcal quemadas</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-xl">pace</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Minutos Totales</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">145 min</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-xl">fitness_center</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sesiones</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">6 completadas</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Daily Burn Bar Chart -->
+<div class="p-4 rounded-xl bg-surface-container shadow-md flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Quema Diaria (Semana Actual)</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Objetivo: 400 kcal/d</span>
+</div>
+<!-- Interactive Bars Container -->
+<div class="grid grid-cols-7 gap-2 items-end h-36 pt-4 pb-2 px-1">
+<!-- Lun -->
+<button aria-label="Lunes: 380 kcal" class="chart-bar group flex flex-col items-center h-full justify-end w-full focus:outline-none" onclick="seleccionarDiaGrafico('Lunes', 380, this)">
+<div class="w-full bg-surface-variant rounded-t-md group-hover:bg-primary-container/80 transition-all" style="height: 65%;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-medium">L</span>
+</button>
+<!-- Mar -->
+<button aria-label="Martes: 420 kcal" class="chart-bar group flex flex-col items-center h-full justify-end w-full focus:outline-none" onclick="seleccionarDiaGrafico('Martes', 420, this)">
+<div class="w-full bg-surface-variant rounded-t-md group-hover:bg-primary-container/80 transition-all" style="height: 72%;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-medium">M</span>
+</button>
+<!-- Mie -->
+<button aria-label="Miércoles: 310 kcal" class="chart-bar group flex flex-col items-center h-full justify-end w-full focus:outline-none" onclick="seleccionarDiaGrafico('Miércoles', 310, this)">
+<div class="w-full bg-surface-variant rounded-t-md group-hover:bg-primary-container/80 transition-all" style="height: 53%;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-medium">X</span>
+</button>
+<!-- Jue -->
+<button aria-label="Jueves: 490 kcal" class="chart-bar group flex flex-col items-center h-full justify-end w-full focus:outline-none" onclick="seleccionarDiaGrafico('Jueves', 490, this)">
+<div class="w-full bg-surface-variant rounded-t-md group-hover:bg-primary-container/80 transition-all" style="height: 84%;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-medium">J</span>
+</button>
+<!-- Vie (Peak Highlight) -->
+<button aria-label="Viernes: 580 kcal (Récord)" class="chart-bar group flex flex-col items-center h-full justify-end w-full focus:outline-none" onclick="seleccionarDiaGrafico('Viernes', 580, this)">
+<div class="w-full bg-gradient-to-t from-secondary to-primary-container rounded-t-md shadow-[0_0_12px_rgba(0,240,255,0.4)]" style="height: 100%;"></div>
+<span class="font-label-sm text-label-sm text-primary-container mt-2 font-bold">V</span>
+</button>
+<!-- Sab -->
+<button aria-label="Sábado: 390 kcal" class="chart-bar group flex flex-col items-center h-full justify-end w-full focus:outline-none" onclick="seleccionarDiaGrafico('Sábado', 390, this)">
+<div class="w-full bg-surface-variant rounded-t-md group-hover:bg-primary-container/80 transition-all" style="height: 67%;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-medium">S</span>
+</button>
+<!-- Dom -->
+<button aria-label="Domingo: 270 kcal" class="chart-bar group flex flex-col items-center h-full justify-end w-full focus:outline-none" onclick="seleccionarDiaGrafico('Domingo', 270, this)">
+<div class="w-full bg-surface-variant rounded-t-md group-hover:bg-primary-container/80 transition-all" style="height: 46%;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-medium">D</span>
+</button>
+</div>
+<!-- Dynamic Chart Detail Banner -->
+<div class="p-2.5 rounded-lg bg-surface-container-high flex items-center justify-between text-on-surface" id="chart-detail-box">
+<span class="font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span id="chart-selected-day">Viernes (Récord Semanal)</span>
+</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="chart-selected-val">580 kcal</span>
+</div>
+</div>
+<!-- Biomedical Metrics Cards -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Weight Card with Sparkline -->
+<div class="p-3.5 rounded-xl bg-surface-container flex flex-col justify-between shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Peso Corporal</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">-1.8 kg</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-black">74.2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">kg</span>
+</div>
+<!-- Sparkline SVG -->
+<div class="w-full h-8 pt-1">
+<svg class="w-full h-full" fill="none" viewbox="0 0 100 24">
+<path d="M0 20 L20 18 L40 14 L60 16 L80 9 L100 5" stroke="#00f0ff" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+</div>
+</div>
+<!-- Resistencia AURA -->
+<div class="p-3.5 rounded-xl bg-surface-container flex flex-col justify-between shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Resistencia AURA</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-bold">Nivel 4</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-black">86</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/100</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-2">
+<div class="bg-gradient-to-r from-secondary to-primary-container h-full rounded-full" style="width: 86%;"></div>
+</div>
+</div>
+</div>
+<!-- Metabolic Distribution -->
+<div class="p-3.5 rounded-xl bg-surface-container shadow-sm flex flex-col space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">Distribución Metabólica</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Últimos 30 días</span>
+</div>
+<div class="flex h-3 w-full rounded-full overflow-hidden gap-1">
+<div class="bg-primary-container h-full rounded-l-full" style="width: 65%;"></div>
+<div class="bg-secondary h-full rounded-r-full" style="width: 35%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span> 65% HIIT Glucolítico</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span> 35% Resistencia Oxidativa</span>
+</div>
+</div>
+<!-- Recent History List -->
+<div class="flex flex-col space-y-2.5">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Historial Reciente</h3>
+<div class="flex flex-col space-y-2">
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">HIIT Full Body Ignición</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ayer • 20 min</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-tertiary-fixed font-bold">350 kcal</span>
+<span class="font-label-sm text-label-sm text-primary-container">100% Completado</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">Cardio Quema Grasa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hace 2 días • 15 min</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-tertiary-fixed font-bold">180 kcal</span>
+<span class="font-label-sm text-label-sm text-primary-container">100% Completado</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Export & Sync Button -->
+<button class="w-full py-3 rounded-xl bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-[0.99]" onclick="exportarHistorial()">
+<span class="material-symbols-outlined text-lg">sync</span>
+<span>Exportar Registro &amp; Sincronizar Biométricos</span>
+</button>
+</section>
+<!-- TAB 4: RETOS & LOGROS -->
+<section class="tab-panel hidden flex flex-col w-full space-y-4 px-margin" id="tab-retos">
+<!-- Active Monthly Challenge Banner -->
+<div class="p-4 rounded-xl bg-surface-container-high shadow-xl relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-primary-container/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-label-sm font-bold uppercase tracking-wider">Desafío Oficial Mensual</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-bold">Faltan 10 días</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-black tracking-tight">21 Días Quemagrasa AURA</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Consigue 21 sesiones de alta intensidad consecutivas o alternas durante el mes.</p>
+</div>
+<div class="flex flex-col space-y-1.5 pt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-medium">Progreso Global</span>
+<span class="text-primary font-bold" id="monthly-progress-text">Día 11 de 21 (52%)</span>
+</div>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary-container to-secondary h-full rounded-full transition-all duration-500" id="monthly-progress-bar" style="width: 52%;"></div>
+</div>
+</div>
+<button class="w-full mt-2 py-3 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold shadow-[0_0_16px_rgba(0,240,255,0.3)] active:scale-95 transition-all flex items-center justify-center gap-2" id="btn-checkin" onclick="realizarCheckIn()">
+<span class="material-symbols-outlined text-xl">fact_check</span>
+<span id="checkin-label">Marcar Check-in de Hoy</span>
+</button>
+</div>
+</div>
+<!-- Personal Active Challenges -->
+<div class="flex flex-col space-y-2.5">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Desafíos Activos</h3>
+<div class="flex flex-col space-y-2.5">
+<!-- Reto 1 -->
+<div class="p-3.5 rounded-xl bg-surface-container flex flex-col space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-xl">local_fire_department</span>
+<span class="font-label-md text-label-md text-primary font-bold">1,000 Calorías en 3 Días</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">74%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 74%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">740 / 1,000 kcal quemadas</span>
+</div>
+<!-- Reto 2 -->
+<div class="p-3.5 rounded-xl bg-surface-container flex flex-col space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary-fixed text-xl">bolt</span>
+<span class="font-label-md text-label-md text-primary font-bold">Racha Imparable de 7 Días</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-bold">5/7 días</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed h-full rounded-full" style="width: 71%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 días más para desbloquear Insignia Titán</span>
+</div>
+<!-- Reto 3 -->
+<div class="p-3.5 rounded-xl bg-surface-container flex flex-col space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-xl">military_tech</span>
+<span class="font-label-md text-label-md text-primary font-bold">Rey del HIIT: 5 Sesiones</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container font-bold">3/5</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 60%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Completa 2 rutinas más de más de 20 min</span>
+</div>
+</div>
+</div>
+<!-- Trophy Showcase -->
+<div class="flex flex-col space-y-2.5">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Vitrina de Trofeos</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 Desbloqueados</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="p-3 rounded-xl bg-surface-container flex flex-col items-center text-center shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center mb-1.5 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+<span class="material-symbols-outlined text-xl">whatshot</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold leading-tight">Primer Fuego</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container flex flex-col items-center text-center shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary/20 text-secondary flex items-center justify-center mb-1.5 shadow-[0_0_10px_rgba(67,237,205,0.2)]">
+<span class="material-symbols-outlined text-xl">skateboarding</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold leading-tight">Destructor Grasa</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container flex flex-col items-center text-center shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed/20 text-tertiary-fixed flex items-center justify-center mb-1.5 shadow-[0_0_10px_rgba(111,251,190,0.2)]">
+<span class="material-symbols-outlined text-xl">shield</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold leading-tight">Disciplina Acero</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container flex flex-col items-center text-center shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/20 text-primary-fixed flex items-center justify-center mb-1.5 shadow-[0_0_10px_rgba(125,244,255,0.2)]">
+<span class="material-symbols-outlined text-xl">wb_sunny</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold leading-tight">Madrugador Fit</span>
+</div>
+</div>
+</div>
+<!-- Weekly Community Leaderboard -->
+<div class="flex flex-col space-y-2.5">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Comunidad Global AURA</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Top Semana</span>
+</div>
+<div class="flex flex-col space-y-2">
+<!-- Pos 1 -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<span class="w-6 font-label-md text-label-md text-primary-container font-black text-center">#1</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-bold text-xs">CV</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Camila V.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nivel 5 Elite</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-secondary font-black">4,120 kcal</span>
+</div>
+<!-- Pos 2 -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<span class="w-6 font-label-md text-label-md text-secondary font-black text-center">#2</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-bold text-xs">MR</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Mateo R.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nivel 4 Pro</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-secondary font-black">3,790 kcal</span>
+</div>
+<!-- Pos 3 -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<span class="w-6 font-label-md text-label-md text-tertiary-fixed font-black text-center">#3</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-bold text-xs">SL</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Sofía L.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nivel 4 Pro</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-secondary font-black">3,450 kcal</span>
+</div>
+<!-- Current User Position -->
+<div class="p-3.5 rounded-xl bg-surface-container-high shadow-[0_0_16px_rgba(0,240,255,0.15)] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 font-label-md text-label-md text-primary-container font-black text-center">#7</span>
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-primary-container to-secondary text-surface flex items-center justify-center font-bold text-xs shadow-sm">TÚ</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-primary font-black">AURA Pilot (Tú)</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container/20 text-primary-container font-label-sm text-label-sm">Top 15%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nivel 4 Avanzado</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-primary-container font-black">2,840 kcal</span>
+</div>
+</div>
+</div>
+<!-- Accept New Challenge Button -->
+<button class="w-full py-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-[0.99]" onclick="mostrarToast('Explorador de nuevos retos desbloqueado', 'explore')">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>Aceptar Nuevo Desafío</span>
+</button>
+</section>
+<!-- QUICK WORKOUT MODAL (LAUNCHED FROM SHELLED '+' BUTTON) -->
+<div class="fixed inset-0 z-50 bg-background/80 backdrop-blur-md hidden flex items-end justify-center" id="modal-quick-workout">
+<div class="w-full max-w-md bg-surface-container-high rounded-t-3xl p-6 shadow-2xl flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary-container uppercase font-bold tracking-wider">Inicio Inmediato</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Iniciar Entrenamiento Rápido</h3>
+</div>
+<button aria-label="Cerrar Ventana" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" onclick="cerrarModalRapido()">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-1">
+<!-- Option 1 -->
+<button class="p-3.5 rounded-xl bg-surface-container hover:bg-surface-variant flex flex-col space-y-1 text-left transition-all active:scale-95 shadow-sm" onclick="lanzarEntrenamientoRapido('Tabata 4 Minutos Turbo', 4, 85)">
+<span class="material-symbols-outlined text-primary-container text-2xl">bolt</span>
+<span class="font-label-md text-label-md text-primary font-bold">Tabata 4 min</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">85 kcal • 1 Ronda</span>
+</button>
+<!-- Option 2 -->
+<button class="p-3.5 rounded-xl bg-surface-container hover:bg-surface-variant flex flex-col space-y-1 text-left transition-all active:scale-95 shadow-sm" onclick="lanzarEntrenamientoRapido('Quema Exprés 15 Minutos', 15, 200)">
+<span class="material-symbols-outlined text-secondary text-2xl">local_fire_department</span>
+<span class="font-label-md text-label-md text-primary font-bold">Quema Exprés 15m</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">200 kcal • Full Body</span>
+</button>
+<!-- Option 3 -->
+<button class="p-3.5 rounded-xl bg-surface-container hover:bg-surface-variant flex flex-col space-y-1 text-left transition-all active:scale-95 shadow-sm" onclick="lanzarEntrenamientoRapido('HIIT Intenso 20 Minutos', 20, 320)">
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl">speed</span>
+<span class="font-label-md text-label-md text-primary font-bold">HIIT Intenso 20m</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">320 kcal • 3 Rondas</span>
+</button>
+<!-- Option 4 -->
+<button class="p-3.5 rounded-xl bg-surface-container hover:bg-surface-variant flex flex-col space-y-1 text-left transition-all active:scale-95 shadow-sm" onclick="lanzarEntrenamientoRapido('Core &amp; Abdominales 10 Minutos', 10, 110)">
+<span class="material-symbols-outlined text-primary-fixed text-2xl">shield</span>
+<span class="font-label-md text-label-md text-primary font-bold">Core 10 min</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">110 kcal • Isométrico</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center pt-2">
+        Selecciona un micro-bloque para activar de inmediato el reloj metabólico.
+      </p>
+</div>
+</div>
+</div>
+<script>
+  // Core Application State
+  const AURA_STATE = {
+    activeTab: 'rutinas',
+    timerSeconds: 42,
+    timerMax: 45,
+    timerRunning: true,
+    timerInterval: null,
+    audioEnabled: true,
+    activeWorkoutName: 'Jumping Jacks Explosivos',
+    activeWorkoutCalories: 145,
+    checkedInToday: false
+  };
+
+  // Toast System
+  function mostrarToast(mensaje, iconName = 'check_circle') {
+    const toast = document.getElementById('aura-toast');
+    const msg = document.getElementById('aura-toast-msg');
+    const icon = document.getElementById('aura-toast-icon');
+    if (!toast || !msg || !icon) return;
+    
+    msg.textContent = mensaje;
+    icon.textContent = iconName;
+    toast.classList.remove('opacity-0', '-translate-y-2');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', '-translate-y-2');
+    }, 2400);
+  }
+
+  // Tab Navigation Handling
+  function cambiarPestana(targetTab) {
+    AURA_STATE.activeTab = targetTab;
+    const paneles = document.querySelectorAll('.tab-panel');
+    paneles.forEach(panel => {
+      panel.classList.add('hidden');
+    });
+
+    const activePanel = document.getElementById('tab-' + targetTab);
+    if (activePanel) {
+      activePanel.classList.remove('hidden');
+    }
+
+    // Update Bottom Nav Highlighting
+    const navLinks = document.querySelectorAll('nav a[data-path]');
+    navLinks.forEach(link => {
+      const path = link.getAttribute('data-path');
+      if (path === targetTab) {
+        link.classList.add('text-primary-container');
+        link.classList.remove('text-on-surface-variant');
+      } else if (path !== 'nueva-sesion') {
+        link.classList.remove('text-primary-container');
+        link.classList.add('text-on-surface-variant');
+      }
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Intercept Global Nav Clicks
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a[data-path]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('data-path');
+        if (target === 'nueva-sesion') {
+          abrirModalRapido();
+        } else if (['rutinas', 'entrenador', 'progreso', 'retos'].includes(target)) {
+          cambiarPestana(target);
+        }
+      });
+    });
+
+    // Start timer by default
+    iniciarTemporizador();
+  });
+
+  // Modal Controls
+  function abrirModalRapido() {
+    const modal = document.getElementById('modal-quick-workout');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function cerrarModalRapido() {
+    const modal = document.getElementById('modal-quick-workout');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function lanzarEntrenamientoRapido(nombre, minutos, kcal) {
+    cerrarModalRapido();
+    iniciarRutinaDirecta(nombre, minutos, kcal);
+  }
+
+  // Trainer & Countdown Engine
+  function iniciarTemporizador() {
+    if (AURA_STATE.timerInterval) clearInterval(AURA_STATE.timerInterval);
+    AURA_STATE.timerRunning = true;
+    actualizarBotonPlay();
+
+    AURA_STATE.timerInterval = setInterval(() => {
+      if (AURA_STATE.timerSeconds > 0) {
+        AURA_STATE.timerSeconds--;
+        actualizarDisplayTimer();
+      } else {
+        // Round completion simulation
+        AURA_STATE.timerSeconds = AURA_STATE.timerMax;
+        mostrarToast('¡Ronda completada! Siguiente ejercicio listo.', 'celebration');
+        actualizarDisplayTimer();
+      }
+    }, 1000);
+  }
+
+  function pausarTemporizador() {
+    AURA_STATE.timerRunning = false;
+    if (AURA_STATE.timerInterval) clearInterval(AURA_STATE.timerInterval);
+    actualizarBotonPlay();
+    mostrarToast('Temporizador pausado', 'pause');
+  }
+
+  function toggleTimer() {
+    if (AURA_STATE.timerRunning) {
+      pausarTemporizador();
+    } else {
+      iniciarTemporizador();
+      mostrarToast('Reanudando alta intensidad', 'play_arrow');
+    }
+  }
+
+  function actualizarBotonPlay() {
+    const icon = document.getElementById('timer-play-icon');
+    const badge = document.getElementById('timer-status-badge');
+    if (!icon || !badge) return;
+
+    if (AURA_STATE.timerRunning) {
+      icon.textContent = 'pause';
+      badge.textContent = 'En Exerción';
+      badge.className = 'px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm font-bold uppercase';
+    } else {
+      icon.textContent = 'play_arrow';
+      badge.textContent = 'Pausado';
+      badge.className = 'px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-bold uppercase';
+    }
+  }
+
+  function actualizarDisplayTimer() {
+    const display = document.getElementById('timer-display');
+    const ring = document.getElementById('timer-ring');
+    if (!display || !ring) return;
+
+    const mins = Math.floor(AURA_STATE.timerSeconds / 60);
+    const secs = AURA_STATE.timerSeconds % 60;
+    display.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+    // Update SVG stroke offset (circumference 264)
+    const ratio = AURA_STATE.timerSeconds / AURA_STATE.timerMax;
+    const offset = 264 * (1 - ratio);
+    ring.style.strokeDashoffset = offset;
+  }
+
+  function toggleAudio() {
+    AURA_STATE.audioEnabled = !AURA_STATE.audioEnabled;
+    const icon = document.getElementById('audio-icon');
+    if (icon) {
+      icon.textContent = AURA_STATE.audioEnabled ? 'volume_up' : 'volume_off';
+    }
+    mostrarToast(AURA_STATE.audioEnabled ? 'Voz de coach activada' : 'Coach silenciado', AURA_STATE.audioEnabled ? 'volume_up' : 'volume_off');
+  }
+
+  function saltarEjercicio() {
+    AURA_STATE.timerSeconds = AURA_STATE.timerMax;
+    actualizarDisplayTimer();
+    mostrarToast('Saltando a Sentadillas con Salto', 'fast_forward');
+    const title = document.getElementById('current-exercise-title');
+    if (title) title.textContent = 'Sentadillas con Salto Explosivas';
+  }
+
+  function terminarEntrenamiento() {
+    pausarTemporizador();
+    mostrarToast('¡Sesión registrada con éxito! +145 kcal acumuladas', 'emoji_events');
+    setTimeout(() => {
+      cambiarPestana('progreso');
+    }, 900);
+  }
+
+  function iniciarRutinaDirecta(nombre, minutos, kcal) {
+    AURA_STATE.activeWorkoutName = nombre;
+    AURA_STATE.timerSeconds = 45;
+    AURA_STATE.timerMax = 45;
+
+    const title = document.getElementById('current-exercise-title');
+    if (title) title.textContent = nombre;
+
+    cambiarPestana('entrenador');
+    iniciarTemporizador();
+    mostrarToast(`Iniciando ${nombre} (${minutos} min)`, 'timer');
+  }
+
+  // Filter Routines in Tab 1
+  function filtrarRutinas(categoria, boton) {
+    const pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(p => {
+      p.className = 'filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold transition-all';
+    });
+
+    boton.className = 'filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-sm transition-all';
+
+    const cards = document.querySelectorAll('.routine-card');
+    cards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      if (categoria === 'todos' || cardCat === categoria) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Interactive Chart Selection in Tab 3
+  function seleccionarDiaGrafico(dia, kcal, elem) {
+    const detailDay = document.getElementById('chart-selected-day');
+    const detailVal = document.getElementById('chart-selected-val');
+    if (detailDay && detailVal) {
+      detailDay.textContent = dia;
+      detailVal.textContent = kcal + ' kcal';
+    }
+    mostrarToast(`${dia}: ${kcal} kcal registradas`, 'bar_chart');
+  }
+
+  function exportarHistorial() {
+    mostrarToast('Datos biométricos sincronizados con Apple Health / Google Fit', 'cloud_done');
+  }
+
+  // Monthly Challenge Check-In in Tab 4
+  function realizarCheckIn() {
+    const label = document.getElementById('checkin-label');
+    const progText = document.getElementById('monthly-progress-text');
+    const progBar = document.getElementById('monthly-progress-bar');
+    const btn = document.getElementById('btn-checkin');
+
+    if (!AURA_STATE.checkedInToday) {
+      AURA_STATE.checkedInToday = true;
+      if (label) label.textContent = '¡Check-in Completado Hoy!';
+      if (progText) progText.textContent = 'Día 12 de 21 (57%)';
+      if (progBar) progBar.style.width = '57%';
+      if (btn) {
+        btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+        btn.classList.add('bg-surface-container-highest', 'text-secondary');
+      }
+      mostrarToast('¡Día 12 verificado! Mantienes tu racha activa 🔥', 'local_fire_department');
+    } else {
+      mostrarToast('Ya completaste el registro de hoy. ¡Sigue así!', 'info');
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_-4px_24px_rgba(0,0,0,0.6)]" data-active-classes="text-primary-container drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]"><div class="h-20 px-gutter flex items-center justify-between relative max-w-md mx-auto"><a aria-current="page" class="flex-1 h-full flex flex-col items-center justify-center gap-1 transition-colors min-w-[44px] text-primary-container drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]" data-path="rutinas" href="#"><span class="material-symbols-outlined text-2xl">fitness_center</span><span class="font-label-sm text-label-sm">Rutinas</span></a><a class="flex-1 h-full flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors min-w-[44px]" data-path="entrenador" href="#"><span class="material-symbols-outlined text-2xl">timer</span><span class="font-label-sm text-label-sm">Entrenador</span></a><div class="flex-1 flex items-center justify-center -translate-y-4"><a aria-label="Iniciar Entrenamiento" class="w-14 h-14 rounded-full bg-gradient-to-tr from-primary-container via-secondary-container to-secondary text-surface flex items-center justify-center shadow-[0_0_24px_rgba(0,240,255,0.45),0_0_48px_rgba(67,237,205,0.2)] active:scale-95 transition-transform" data-path="nueva-sesion" href="#"><span class="material-symbols-outlined text-3xl font-bold">add</span></a></div><a class="flex-1 h-full flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors min-w-[44px]" data-path="progreso" href="#"><span class="material-symbols-outlined text-2xl">bar_chart</span><span class="font-label-sm text-label-sm">Progreso</span></a><a class="flex-1 h-full flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors min-w-[44px]" data-path="retos" href="#"><span class="material-symbols-outlined text-2xl">emoji_events</span><span class="font-label-sm text-label-sm">Retos</span></a></div></nav></body></html>
